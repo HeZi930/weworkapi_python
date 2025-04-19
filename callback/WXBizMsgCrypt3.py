@@ -15,14 +15,21 @@ import struct
 from Crypto.Cipher import AES
 import xml.etree.cElementTree as ET
 import socket
+import os
+import sys
 
-import ierror
+# 添加当前目录到系统路径
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.append(current_dir)
+
+from . import ierror
 
 
 """
 关于Crypto.Cipher模块，ImportError: No module named 'Crypto'解决方案
 请到官方网站 https://www.dlitz.net/software/pycrypto/ 下载pycrypto。
-下载后，按照README中的“Installation”小节的提示进行pycrypto安装。
+下载后，按照README中的"Installation"小节的提示进行pycrypto安装。
 """
 
 
